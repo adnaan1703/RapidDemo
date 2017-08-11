@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rapido Demo</string>
+    <string name="main_screen_source_button_text">Enter Source Address</string>
+    <string name="main_screen_destination_button_text">Enter Destination Address</string>
+    <string name="main_screen_cta_text">Find Route</string>
+    <string name="polyline">c~xlDghluMIUCUDSHURK^?d@?H?@gDwD@iADWIUJk@KD\\~@jH`@`DBp@\\pChAvJ\\pD{@}@eH_JOKWCe@BO@KN_HdLyC~EuCtEqBzCgDzF{EjI_EdHoErHuBhDeC|DkArBuA~BKLeCoBkB}AsG}EaCqBeGuFsE}D}LeKg@a@FM~@}AdB{AFSCuDkJREACGMuKA{FkA?AoJCeF[{\\BeCDSTc@RWNKPC~AC`JIbMYZ?`@Dh@Pj@\\^^X^^|@Nz@Bt@</string>
+    <string name="main_screen_current_location_button_text">Detect Current Location</string>
+    <string name="alert_dialog_permission_request_text">To use this feature you have to enable the permission</string>
+    <string name="alert_dialog_permission_request_title">Permission Request</string>
+    <string name="alert_dialog_permission_request_positive_button_text">Ask Permission</string>
+    <string name="alert_dialog_permission_request_negative_button_text">Ignore</string>
+</resources>
