@@ -13,9 +13,11 @@ import com.google.maps.android.PolyUtil;
 import com.konel.kryptapps.rapidodemo.R;
 import com.konel.kryptapps.rapidodemo.model.directionsAPI.Bounds;
 import com.konel.kryptapps.rapidodemo.model.directionsAPI.DirectionResponse;
+import com.konel.kryptapps.rapidodemo.model.directionsAPI.Leg;
 import com.konel.kryptapps.rapidodemo.model.directionsAPI.Northeast;
 import com.konel.kryptapps.rapidodemo.model.directionsAPI.Route;
 import com.konel.kryptapps.rapidodemo.model.directionsAPI.Southwest;
+import com.konel.kryptapps.rapidodemo.model.directionsAPI.Step;
 import com.konel.kryptapps.rapidodemo.network.Repository;
 import com.konel.kryptapps.rapidodemo.utils.CodeUtil;
 
@@ -41,12 +43,12 @@ class RoutePresenter implements RouteContract.PresenterImpl {
     private LatLng destinationLatLng;
     private LatLng currentLatLng;
     private Callback<DirectionResponse> callBack;
-    private DirectionResponse response = null;
+    private DirectionResponse response;
 
-    public RoutePresenter(@NonNull RouteContract.ViewImpl view,
-                          @NonNull LatLng sourceLatLng,
-                          @NonNull LatLng destinationLatLng,
-                          @Nullable LatLng currentLatLng) {
+    RoutePresenter(@NonNull RouteContract.ViewImpl view,
+                   @NonNull LatLng sourceLatLng,
+                   @NonNull LatLng destinationLatLng,
+                   @Nullable LatLng currentLatLng) {
         this.view = view;
         this.sourceLatLng = sourceLatLng;
         this.destinationLatLng = destinationLatLng;
@@ -73,7 +75,6 @@ class RoutePresenter implements RouteContract.PresenterImpl {
 
     private void onPostRequest(DirectionResponse response) {
         this.response = response;
-
         sendMarkers();
 
         List<Route> routes = response.routes;
@@ -94,7 +95,7 @@ class RoutePresenter implements RouteContract.PresenterImpl {
             PolylineOptions polylineOptions = new PolylineOptions();
             polylineOptions.clickable(true);
             polylineOptions.color(ContextCompat.getColor(view.getViewContext(), R.color.colorPrimaryLight));
-            polylineOptions.width(CodeUtil.dpToPx(view.getViewContext(), 2));
+            polylineOptions.width(CodeUtil.dpToPx(view.getViewContext(), 4));
             polylineOptions.addAll(PolyUtil.decode(route.overviewPolyline.points));
             if (polylineOptionsArrayList.size() == 0)
                 polylineOptions.color(ContextCompat.getColor(view.getViewContext(), R.color.colorPrimary));
@@ -142,13 +143,25 @@ class RoutePresenter implements RouteContract.PresenterImpl {
         Repository.getDirections(
                 CodeUtil.LatLngToString(sourceLatLng),
                 CodeUtil.LatLngToString(destinationLatLng),
-                CodeUtil.LatLngToString(currentLatLng),
+//                CodeUtil.LatLngToString(currentLatLng),
+// replace this with null in case we need current location as wayPoint
+                null,
                 callBack
         );
     }
 
     @Override
     public void onRouteSelected(Polyline polyline) {
+        int index = (int) polyline.getTag();
+        ArrayList<Step> steps = new ArrayList<>();
+        if (CodeUtil.isEmptyOrNull(response.routes.get(index).legs))
+            return;
 
+        for (Leg leg : response.routes.get(index).legs) {
+            steps.addAll(leg.steps);
+        }
+
+        if (steps.size() > 0)
+            view.showRoutesBottomSheet(steps);
     }
 }

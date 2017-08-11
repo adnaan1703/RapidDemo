@@ -12,4 +12,7 @@
     <string name="query_screen_cta">Show Routes</string>
     <string name="query_screen_current_location_label_text">current location detected</string>
     <string name="query_screen_detect_location_button_text">Detect Current Location</string>
+    <string name="distance">Distance : </string>
+    <string name="duration">Duration : </string>
+    <string name="instruction">Instruction :</string>
 </resources>

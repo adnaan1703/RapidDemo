@@ -2,6 +2,7 @@
 <resources>
     <dimen name="screen_padding">16dp</dimen>
     <dimen name="text_heading1_size">16sp</dimen>
+    <dimen name="text_heading2_size">14sp</dimen>
     <dimen name="text_body_size">12sp</dimen>
     <dimen name="button_text_size">14sp</dimen>
 </resources>

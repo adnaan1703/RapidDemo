@@ -8,6 +8,7 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.konel.kryptapps.rapidodemo.base.BasePresenterImpl;
 import com.konel.kryptapps.rapidodemo.base.BaseViewImpl;
+import com.konel.kryptapps.rapidodemo.model.directionsAPI.Step;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class RouteContract {
 
         void setMapBounds(LatLngBounds bounds);
 
+        void showRoutesBottomSheet(ArrayList<Step> steps);
     }
 
 }
