@@ -21,18 +21,14 @@ import butterknife.OnClick;
 public class MainActivity extends RapidoBaseActivity {
 
 
-    @BindView(R.id.tvSource)
-    TextView tvSourceAddress;
-
-    @BindView(R.id.tvDestination)
-    TextView tvDestinationAddress;
-
-    @BindView(R.id.tvCurrent)
-    TextView tvCurrentAddress;
-
     public static final int PLACE_AUTOCOMPLETE_REQUEST_CODE_SOURCE = 0x1;
     public static final int PLACE_AUTOCOMPLETE_REQUEST_CODE_DESTINATION = 0x2;
-
+    @BindView(R.id.tvSource)
+    TextView tvSourceAddress;
+    @BindView(R.id.tvDestination)
+    TextView tvDestinationAddress;
+    @BindView(R.id.tvCurrent)
+    TextView tvCurrentAddress;
     private Place sourcePlace = null;
     private Place destinationPlace = null;
     private Location currentLocation = null;

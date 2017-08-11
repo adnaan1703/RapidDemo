@@ -10,6 +10,4 @@ package com.konel.kryptapps.rapidodemo.network;
 public class Repository {
 
 
-
-
 }
