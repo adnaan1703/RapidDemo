@@ -2,6 +2,7 @@ package com.konel.kryptapps.rapidodemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,6 +53,8 @@ public class MapActivity extends RapidoBaseActivity implements OnMapReadyCallbac
         sourceLatLng = new LatLng(sourceLatitude, sourceLongitude);
         destinationLatLng = new LatLng(destinationLatitude, destinationLongitude);
         currentLatLng = new LatLng(currentLatitude, currentLongitude);
+
+        Log.i("saruman", sourceLatLng.toString());
 
         DirectionApiClient client = GoogleServiceGenerator.createService(DirectionApiClient.class);
         call = client.getDirections(

@@ -18,7 +18,7 @@ public interface DirectionApiClient {
     Call<DirectionResponse> getDirections(
             @Query("origin") String origin,
             @Query("destination") String destination,
-            @Query("waypoints") String waypoint,
+            @Query("waypoints") String wayPoint,
             @Query("alternatives") boolean alternatives,
             @Query("key") String apiKey
     );

@@ -9,4 +9,7 @@
     <string name="alert_dialog_permission_request_title">Permission Request</string>
     <string name="alert_dialog_permission_request_positive_button_text">Ask Permission</string>
     <string name="alert_dialog_permission_request_negative_button_text">Ignore</string>
+    <string name="query_screen_cta">Show Routes</string>
+    <string name="query_screen_current_location_label_text">current location detected</string>
+    <string name="query_screen_detect_location_button_text">Detect Current Location</string>
 </resources>

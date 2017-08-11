@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -22,8 +23,15 @@ import java.util.Locale;
 
 public class CodeUtil {
 
-    public static String LatLngToString(LatLng latLng) {
+    @Nullable
+    public static String LatLngToString(@Nullable LatLng latLng) {
+        if (latLng == null)
+            return null;
         return String.format(Locale.getDefault(), "%f,%f", latLng.latitude, latLng.longitude);
+    }
+
+    public static boolean isEmptyOrNull(List list) {
+        return list == null || list.size() == 0;
     }
 
     public static int dpToPx(Context context, double dp) {
