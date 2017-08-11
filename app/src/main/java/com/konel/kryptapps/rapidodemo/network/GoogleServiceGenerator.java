@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 
-public class GoogleServiceGenerator {
+class GoogleServiceGenerator {
     private static final String API_BASE_URL = "https://maps.googleapis.com/";
     private static final OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
 
@@ -19,7 +19,7 @@ public class GoogleServiceGenerator {
             .baseUrl(API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create());
 
-    public static <S> S createService(Class<S> serviceClass) {
+    static <S> S createService(Class<S> serviceClass) {
         Retrofit retrofit = builder.client(httpClientBuilder.build()).build();
         return retrofit.create(serviceClass);
     }

@@ -8,8 +8,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.konel.kryptapps.rapidodemo.utils.AppConstantsUtil;
 import com.konel.kryptapps.rapidodemo.R;
+import com.konel.kryptapps.rapidodemo.utils.AppConstantsUtil;
 import com.konel.kryptapps.rapidodemo.utils.CodeUtil;
 import com.konel.kryptapps.rapidodemo.utils.PermissionUtil;
 
@@ -25,14 +25,14 @@ public abstract class RapidoPermissionActivity extends AppCompatActivity impleme
     public static final int REQUEST_CODE_FOR_PERMISSION = 0x1;
 
     public void askedPermission(String permission) {
-        getSharedPreferences(AppConstantsUtil.PREFERNCE_FILE_NAME, MODE_PRIVATE)
+        getSharedPreferences(AppConstantsUtil.PREFERENCE_FILE_NAME, MODE_PRIVATE)
                 .edit()
                 .putBoolean(permission, true)
                 .apply();
     }
 
     public boolean hasAskedPermission(String permission) {
-        return getSharedPreferences(AppConstantsUtil.PREFERNCE_FILE_NAME, MODE_PRIVATE)
+        return getSharedPreferences(AppConstantsUtil.PREFERENCE_FILE_NAME, MODE_PRIVATE)
                 .getBoolean(permission, false);
     }
 

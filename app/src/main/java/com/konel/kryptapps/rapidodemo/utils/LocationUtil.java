@@ -54,7 +54,7 @@ public class LocationUtil implements GoogleApiClient.ConnectionCallbacks, Google
     private Location mCurrentLocation = null;
     private LocationPublishHandler publishHandler;
 
-    public LocationUtil(String name, RapidoLocationActivity activity) {
+    public LocationUtil(RapidoLocationActivity activity) {
         this.activity = activity;
         init();
     }
@@ -186,7 +186,7 @@ public class LocationUtil implements GoogleApiClient.ConnectionCallbacks, Google
                 });
     }
 
-    public void publishLocation(boolean kill) {
+    private void publishLocation(boolean kill) {
         Location sendingLocation;
 
         if (mCurrentLocation != null)
@@ -208,7 +208,7 @@ public class LocationUtil implements GoogleApiClient.ConnectionCallbacks, Google
         publishLocation(true);
     }
 
-    public void stopLocationUpdates() {
+    private void stopLocationUpdates() {
         if (!mRequestingLocationUpdates) {
             return;
         }

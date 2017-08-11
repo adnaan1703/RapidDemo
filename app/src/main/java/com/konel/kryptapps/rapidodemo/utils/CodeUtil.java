@@ -42,9 +42,9 @@ public class CodeUtil {
         Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, uri);
         intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        List<ResolveInfo> resolveInfos = activity.getPackageManager()
+        List<ResolveInfo> resolveInfoList = activity.getPackageManager()
                 .queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        if (null == resolveInfos || resolveInfos.isEmpty()) {
+        if (null == resolveInfoList || resolveInfoList.isEmpty()) {
             return;
         }
         activity.startActivity(intent);

@@ -26,7 +26,7 @@ public abstract class RapidoLocationActivity extends RapidoPermissionActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        locationUtil = new LocationUtil("Location", this);
+        locationUtil = new LocationUtil(this);
     }
 
     @Override

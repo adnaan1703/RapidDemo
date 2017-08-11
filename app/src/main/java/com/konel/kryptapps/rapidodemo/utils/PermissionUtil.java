@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class PermissionUtil {
 
-    public static boolean shouldAskPermission() {
+    private static boolean shouldAskPermission() {
         return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M);
     }
 

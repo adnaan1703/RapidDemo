@@ -13,7 +13,7 @@ import retrofit2.http.Query;
  */
 
 
-public interface DirectionApiClient {
+interface DirectionApiClient {
     @GET("/maps/api/directions/json")
     Call<DirectionResponse> getDirections(
             @Query("origin") String origin,

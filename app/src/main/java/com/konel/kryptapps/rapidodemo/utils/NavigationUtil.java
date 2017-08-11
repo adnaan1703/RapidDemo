@@ -23,7 +23,7 @@ import com.konel.kryptapps.rapidodemo.screens.routeScreen.RouteActivity;
 
 public class NavigationUtil {
 
-    public static final String NAVIGATION_DATA_KEY = "com.konel.kryptapps.rapidodemo.utils.NavigationUtil.data_key";
+    public static final String NAVIGATION_DATA_KEY = "NavigationUtil.data_key";
 
     public static void startAutoCompleteLocationActivityForResult(@NonNull AppCompatActivity activity, int requestCode) {
         try {

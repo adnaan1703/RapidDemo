@@ -19,10 +19,10 @@ import java.util.ArrayList;
  */
 
 
-public class RouteContract {
+class RouteContract {
 
 
-    public interface PresenterImpl extends BasePresenterImpl {
+    interface PresenterImpl extends BasePresenterImpl {
         void onMapReady();
 
         void onRouteSelected(Polyline polyline);
